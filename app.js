@@ -16,27 +16,27 @@ const server = http.createServer(app);
 const wss = createWebSocketServer(server);
 
 // Set up express-session middleware
-app.use(session({
-  secret: 'your-secret-key', // Replace with a strong and unique secret
-  resave: false,
-  saveUninitialized: false,
-}));
+// app.use(session({
+//   secret: 'your-secret-key', // Replace with a strong and unique secret
+//   resave: false,
+//   saveUninitialized: false,
+// }));
 
-const allowedOrigins = ['*'];
+// const allowedOrigins = ['*'];
 
-const corsOptions = {
-  origin: (origin, callback) => {
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-};
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//     if (allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
-
+app.use(cors())
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
