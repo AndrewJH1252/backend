@@ -22,7 +22,7 @@ app.use(session({
   saveUninitialized: false,
 }));
 
-const allowedOrigins = ['https://tutorium.onrender.com'];
+const allowedOrigins = ['https://tutorium-api.onrender.com'];
 
 const corsOptions = {
   origin: (origin, callback) => {
